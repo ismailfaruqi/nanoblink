@@ -219,9 +219,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ProjectName)\lib"
+			OutputDirectory="$(SolutionDir)$(ProjectName)\bin"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="4"
+			ConfigurationType="2"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -249,7 +249,8 @@
 				Name="VCCLCompilerTool"
 				AdditionalIncludeDirectories="$(SolutionDir)NanoBlink\include"
 				PreprocessorDefinitions="NDEBUG;_LIB"
-				RuntimeLibrary="0"
+				MinimalRebuild="true"
+				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
@@ -265,13 +266,16 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)\$(ProjectName)_W32.lib"
-				IgnoreAllDefaultLibraries="false"
-				IgnoreDefaultLibraryNames=""
+				Name="VCLinkerTool"
+				AdditionalDependencies="cudart.lib cuda.lib"
+				OutputFile="$(OutDir)\$(ProjectName)_W32.dll"
+				AdditionalLibraryDirectories="&quot;$(CUDA_PATH_V4_0)\lib\Win32&quot;;&quot;$(NVSDKCOMPUTE_ROOT)\C\common\lib&quot;;"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -281,6 +285,12 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -538,42 +548,112 @@
 			<File
 				RelativePath="..\src\gpu_common.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_io.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_memgetinfo.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_test.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_vcd_sf_mp.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_vcd_sf_mp_k0.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_vcd_sf_mp_k1.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_vcd_sf_mp_k1_v2.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_vcd_sf_mp_k2.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\gpu_vcd_sf_sp.cu"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="Cudart Build Rule"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="..\src\vcd_common.cpp"
